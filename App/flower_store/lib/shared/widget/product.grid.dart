@@ -9,7 +9,7 @@ class ProductGridview extends StatelessWidget {
   final String title;
   final Function(String) onSortOptionChanged;
 
-  ProductGridview({Key? key, required this.products, required this.title, required this.onSortOptionChanged}) : super(key: key);
+  const ProductGridview({super.key, required this.products, required this.title, required this.onSortOptionChanged});
 
   @override
   Widget build(BuildContext context) {

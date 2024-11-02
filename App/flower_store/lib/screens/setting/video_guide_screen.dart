@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoGuideScreen extends StatefulWidget {
-  const VideoGuideScreen({Key? key}) : super(key: key);
+  const VideoGuideScreen({super.key});
 
   @override
   _VideoGuideScreenState createState() => _VideoGuideScreenState();

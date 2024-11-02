@@ -13,7 +13,7 @@ const {DetailInvoiceSchemaDoc} = require('./features/models/invoice/detailInvoic
 
 const doc = {
     info: {
-        title: 'Flower Store API',
+        title: 'APP API',
         description: ''
     },
     host: 'localhost:3000',

@@ -2,13 +2,11 @@ import 'package:flower_store/main.dart';
 import 'package:flower_store/screens/forgot_password/forgot.password.dart';
 import 'package:flower_store/screens/setting/video_guide_screen.dart';
 import 'package:flower_store/screens/user/history.purchase.dart';
-import 'package:flower_store/screens/welcome/login.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flower_store/services/share_pre.dart';
 import 'package:flower_store/services/sqlite_pro5.dart';
 import 'package:flower_store/models/authorize/signup.model.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class SettingScreen extends StatefulWidget {
   final bool isDarkMode;

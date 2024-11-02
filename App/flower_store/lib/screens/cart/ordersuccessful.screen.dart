@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 
 class OrderSuccessfulPage extends StatefulWidget {
+  const OrderSuccessfulPage({super.key});
+
   @override
   _OrderSuccessfulPageState createState() => _OrderSuccessfulPageState();
 }

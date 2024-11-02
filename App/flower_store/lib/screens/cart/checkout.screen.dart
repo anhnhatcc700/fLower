@@ -260,8 +260,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         return ListTile(
                           title: Text('${item.name} (${item.quantity} cái)'),
                           trailing: Text(
-                            '${formatCurrency(item.price * item.quantity)}',
-                            style: TextStyle(fontSize: 16),
+                            formatCurrency(item.price * item.quantity),
+                            style: const TextStyle(fontSize: 16),
                           ),
                         );
                       },

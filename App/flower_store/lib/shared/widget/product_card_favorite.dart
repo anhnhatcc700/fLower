@@ -7,7 +7,7 @@ class ProductCard extends StatefulWidget {
   final ProductModel product;
   final Widget? navigator;
 
-  ProductCard({super.key, required this.product, this.navigator});
+  const ProductCard({super.key, required this.product, this.navigator});
 
   @override
   _ProductCardState createState() => _ProductCardState();
@@ -93,17 +93,17 @@ class _ProductCardState extends State<ProductCard> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Positioned(
-                  top: 8.0,
-                  right: 8.0,
-                  child: GestureDetector(
-                    onTap: toggleFavorite,
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : Colors.grey,
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   top: 8.0,
+                //   right: 8.0,
+                //   child: GestureDetector(
+                //     onTap: toggleFavorite,
+                //     child: Icon(
+                //       isFavorite ? Icons.favorite : Icons.favorite_border,
+                //       color: isFavorite ? Colors.red : Colors.grey,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
             GestureDetector(

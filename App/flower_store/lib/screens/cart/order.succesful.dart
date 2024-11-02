@@ -3,6 +3,8 @@ import 'package:flower_store/screens/mainpage/mainpage.screen.dart';
 import 'package:flutter/material.dart';
 
 class OrderSuccessScreen extends StatefulWidget {
+  const OrderSuccessScreen({super.key});
+
   @override
   _OrderSuccessScreenState createState() => _OrderSuccessScreenState();
 }

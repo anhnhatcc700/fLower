@@ -1,5 +1,4 @@
 import 'package:flower_store/models/base.model.dart';
-import 'package:intl/intl.dart';
 
 class CategoryModel extends IBaseModel<CategoryModel> {
   String? id; 

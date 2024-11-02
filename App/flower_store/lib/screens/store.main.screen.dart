@@ -1,17 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flower_store/assets/custom_icon.dart';
 import 'package:flower_store/constants/colors.dart';
-import 'package:flower_store/models/menu.model.dart';
 import 'package:flower_store/models/product/product.model.dart';
 import 'package:flower_store/screens/favorite.screen.dart';
-import 'package:flower_store/screens/user/profile.screen.dart';
 import 'package:flower_store/screens/store_product_page/product_display.screen.dart';
 import 'package:flower_store/services/product.service.dart';
 import 'package:flower_store/shared/components/custom_drawer.dart';
 import 'package:flower_store/shared/components/main_page_header.dart';
 import 'package:flower_store/shared/widget/carousel.dart';
 import 'package:flower_store/shared/widget/product.listview.horizontal.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class StoreMainScreen extends StatefulWidget {
@@ -77,7 +72,7 @@ class _StoreMainScreenState extends State<StoreMainScreen> {
       key: _scaffoldKey,
       body: Container(
         decoration: const BoxDecoration(
-          gradient: gradientBackground,
+          // gradient: gradientBackground,
         ),
         child: Column(
           children: [
@@ -89,22 +84,22 @@ class _StoreMainScreenState extends State<StoreMainScreen> {
                   child: Column(
                     children: [
                       ReusableCarousel(imageList: imgList),
-                      ProductListview(
-                        products: productsFavorite,
-                        title: 'Đã thích',
-                        navigator: const FavoriteScreen(),
-                        seeAll: true,
-                        onTap: _navigateToProductDisplayScreen,
-                      ),
+                      // ProductListview(
+                      //   products: productsFavorite,
+                      //   title: 'Đã thích',
+                      //   navigator: const FavoriteScreen(),
+                      //   seeAll: true,
+                      //   onTap: _navigateToProductDisplayScreen,
+                      // ),
                       ProductListview(
                         products: products,
-                        title: 'Bán nhiều nhất',
+                        title: 'Sản phẩm nổi bật',
                         seeAll: true,
                         onTap: _navigateToProductDisplayScreen,
                       ),
                       ProductListview(
                         products: saleProducts,
-                        title: 'Ưu đãi đặc biệt',
+                        title: 'sản phẩm khuyến mãi',
                         seeAll: true,
                         onTap: _navigateToProductDisplayScreen,
                       ),

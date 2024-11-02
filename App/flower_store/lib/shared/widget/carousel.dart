@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ReusableCarousel extends StatefulWidget {
   final List<String> imageList;
 
-  ReusableCarousel({required this.imageList});
+  const ReusableCarousel({super.key, required this.imageList});
 
   @override
   _ReusableCarouselState createState() => _ReusableCarouselState();
@@ -20,9 +20,9 @@ class _ReusableCarouselState extends State<ReusableCarousel> {
     final List<Widget> imageSliders = widget.imageList
         .map((item) => Container(
               child: Container(
-                margin: EdgeInsets.all(2.0),
+                margin: const EdgeInsets.all(2.0),
                 child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                     child: Image.network(item, fit: BoxFit.fill,)),
               ),
             ))
@@ -57,7 +57,7 @@ class _ReusableCarouselState extends State<ReusableCarousel> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6.0),
                     color: _current == entry.key
-                        ? Color(0xfff56789)
+                        ? const Color(0xfff56789)
                         : Colors.white,
                     border: Border.all(color: Colors.black54, width: 1.0),
                   ),

@@ -1,14 +1,12 @@
-import 'dart:convert';
 import 'dart:io';
 import 'package:flower_store/models/base.model.dart';
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
 
 
 class HttpService {
   constructor() {}
   // String headerUrl = 'http://10.0.2.2:3000/'; // Emulator
-  String headerUrl = 'http://192.168.1.85:3000/api/'; // Physic device
+  String headerUrl = 'http://192.168.1.7:3000/api/'; // Physic device
   var dio = Dio();
 
 

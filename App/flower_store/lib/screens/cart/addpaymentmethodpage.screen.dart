@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class AddPaymentMethodPage extends StatefulWidget {
+  const AddPaymentMethodPage({super.key});
+
   @override
   _AddPaymentMethodPageState createState() => _AddPaymentMethodPageState();
 }
@@ -189,7 +191,7 @@ class _AddPaymentMethodPageState extends State<AddPaymentMethodPage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => PaymentMethodPage(),
+                                    builder: (context) => const PaymentMethodPage(),
                                   ),
                                 );
                               },

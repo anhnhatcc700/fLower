@@ -65,5 +65,28 @@ class AccountService {
             return res.status(500).send(e);
         }
     }
+    async LoginWithFacebook(accessToken) {
+        try {
+            const fbResponse = await axios.get(`https://graph.facebook.com/me?fields=id,name,email&access_token=${accessToken}`);
+            const { id, name, email } = fbResponse.data;
+    
+            let user = await AccountModel.findOne({ email });
+            if (!user) {
+                user = new AccountModel({
+                    name: name,
+                    email: email,
+                    password: 'facebook_auth',
+                });
+                await user.save();
+            }
+    
+            return user;
+        } catch (error) {
+            console.log('Error during Facebook authentication:', error); // Log chi tiết lỗi
+            throw new Error('Xác thực Facebook thất bại: ' + error.message); // Ném lỗi để xử lý ở controller
+        }
+    }
+    
+    
 }
 module.exports = AccountService;

@@ -26,5 +26,14 @@ class AccountController {
     async GetByEmail(req, res) {
         return await accountService.GetByEmail(req.params.email, res);
     }
+    async LoginWithFacebook(req, res) {
+        try {
+            const user = await accountService.LoginWithFacebook(req.body.accessToken);
+            return user;
+        } catch (error) {
+            return { error: error.message }; 
+        }
+    }
+    
 }
 module.exports = AccountController;

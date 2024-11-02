@@ -78,7 +78,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 builder: (context) => const HistoryPurchaseScreen())),
           ),
           if (productCategories.isEmpty)
-            ListTile(
+            const ListTile(
               title: Text('Không có sản phẩm nào'),
             )
           else
@@ -112,7 +112,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return Drawer(
       backgroundColor: const Color(0xFFFFFEFE),
       child: ListView(
-        children: items ?? [Center(child: CircularProgressIndicator())],
+        children: items ?? [const Center(child: CircularProgressIndicator())],
       ),
     );
   }

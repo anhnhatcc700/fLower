@@ -4,7 +4,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 class SortingDropdown extends StatefulWidget {
   final Function(String) onSortOptionChanged;
 
-  const SortingDropdown({required this.onSortOptionChanged});
+  const SortingDropdown({super.key, required this.onSortOptionChanged});
 
   @override
   _SortingDropdownState createState() => _SortingDropdownState();

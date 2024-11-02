@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flower_store/constants/colors.dart';
 import 'package:flower_store/models/product/product.model.dart';
 import 'package:flower_store/services/product.service.dart';

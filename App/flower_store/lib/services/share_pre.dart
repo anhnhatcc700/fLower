@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flower_store/models/authorize/signup.model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flower_store/models/authorize/login.model.dart';
 
 class SharedPreferencesService {
   static const String _accountInfoKey = 'accountInfo';

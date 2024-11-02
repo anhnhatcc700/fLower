@@ -76,4 +76,16 @@ router.get('/get-by-email/:email', async (req, res) => {
    var result = await accountController.GetByEmail(req, res);
    return genericHttpResponse.success(res, result)
 })
+router.post('/login-facebook', async (req, res) => {
+    try {
+        const result = await accountController.LoginWithFacebook(req, res);
+        return genericHttpResponse.success(res, result);
+    } catch (error) {
+        console.error('LoginWithFacebook error:', error); // In chi tiết lỗi
+        res.status(500).json({ message: 'Internal server error', error: error.message });
+    }
+});
+
+
+
 module.exports = router;

@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Flower Store API",
+    "title": "APP API",
     "description": "",
     "version": "1.0.0"
   },
@@ -73,6 +73,148 @@
                 "name": "main"
               }
             }
+          }
+        }
+      }
+    },
+    "/get-list": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get list success",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          },
+          "500": {
+            "description": "Get fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-by-id/{_id}": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get success",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          },
+          "500": {
+            "description": "Get fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete/{_id}": {
+      "delete": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete success",
+            "schema": {
+              "type": "boolean",
+              "example": true,
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Delete fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-by-email/{email}": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get success",
+            "schema": {
+              "$ref": "#/definitions/Accounts"
+            }
+          },
+          "500": {
+            "description": "Get fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/login-facebook": {
+      "post": {
+        "description": "",
+        "responses": {
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -365,73 +507,8 @@
           "200": {
             "description": "New Invoices Success",
             "schema": {
-              "type": "boolean",
-              "example": true,
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update-invoice/{id}": {
-      "put": {
-        "tags": [
-          "Invoice"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Update Invoice.",
-            "schema": {
-              "$ref": "#/definitions/Invoices"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Update Invoices Success",
-            "schema": {
-              "type": "boolean",
-              "example": true,
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/delete-invoice/{id}": {
-      "delete": {
-        "tags": [
-          "Invoice"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Delete Invoice by ID."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Delete Invoices Success",
-            "schema": {
-              "type": "boolean",
-              "example": true,
+              "type": "string",
+              "example": "#/definitions/Invoices",
               "xml": {
                 "name": "main"
               }
@@ -481,6 +558,37 @@
         }
       }
     },
+    "/get-by-accountId/{accountId}": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Get Invoice by ID.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Invoice Success",
+            "schema": {
+              "$ref": "#/definitions/Invoices"
+            }
+          }
+        }
+      }
+    },
     "/addnew-detailInvoice": {
       "post": {
         "tags": [
@@ -500,71 +608,6 @@
         "responses": {
           "200": {
             "description": "New DetailInvoices Success",
-            "schema": {
-              "type": "boolean",
-              "example": true,
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/update-detailInvoice/{id}": {
-      "put": {
-        "tags": [
-          "DetailInvoice"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "description": "Update DetailInvoice.",
-            "schema": {
-              "$ref": "#/definitions/DetailInvoices"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Update DetailInvoices Success",
-            "schema": {
-              "type": "boolean",
-              "example": true,
-              "xml": {
-                "name": "main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/delete-detailInvoice/{id}": {
-      "delete": {
-        "tags": [
-          "DetailInvoice"
-        ],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "Delete DetailInvoice by ID."
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Delete DetailInvoices Success",
             "schema": {
               "type": "boolean",
               "example": true,
@@ -625,12 +668,11 @@
         "description": "",
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "description": "Find product",
-            "schema": {
-              "$ref": "#/definitions/FindProduct"
-            }
+            "name": "nameProduct",
+            "in": "query",
+            "description": "Search product by name",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -653,7 +695,42 @@
         }
       }
     },
-    "/get-product": {
+    "/search-favorite-products": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "Search favorite products by keyword",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          },
+          "500": {
+            "description": "Search fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/new-product": {
       "post": {
         "tags": [
           "Product"
@@ -791,6 +868,166 @@
         "responses": {
           "200": {
             "description": "Get All Products Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        }
+      }
+    },
+    "/get-favorite-products": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get Favorite Products Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        }
+      }
+    },
+    "/toggle-favorite": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Toggle favorite status of a Product.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "string"
+                },
+                "isFavorite": {
+                  "type": "string",
+                  "example": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Toggle Favorite Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          },
+          "500": {
+            "description": "Toggle Favorite Fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-products-by-category/{categoryId}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Get Products by Category ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Products by Category Success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          }
+        }
+      }
+    },
+    "/search-products-by-category": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "Category ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "description": "Search keyword",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search success",
+            "schema": {
+              "$ref": "#/definitions/Products"
+            }
+          },
+          "500": {
+            "description": "Search fail",
+            "schema": {
+              "type": "string",
+              "example": "error",
+              "xml": {
+                "name": "main"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get-include-product-by-product-id/{id}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ids",
+            "in": "path",
+            "description": "Get Include product by parent product id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Include Products Success",
             "schema": {
               "$ref": "#/definitions/Products"
             }
@@ -957,37 +1194,6 @@
         }
       }
     },
-    "DetailInvoice": {
-      "type": "object",
-      "properties": {
-        "productId": {
-          "type": "string",
-          "example": "string"
-        },
-        "quantity": {
-          "type": "string",
-          "example": "number"
-        },
-        "price": {
-          "type": "string",
-          "example": "number"
-        },
-        "address": {
-          "type": "string",
-          "example": "string"
-        },
-        "date": {
-          "type": "string",
-          "example": "string"
-        }
-      },
-      "required": [
-        "productId",
-        "quantity",
-        "price",
-        "address",
-        "date"
-      ]
-    }
+    "DetailInvoice": {}
   }
 }

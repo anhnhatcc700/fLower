@@ -15,8 +15,8 @@ class AuthorizeService {
   Future<AccountModel> login(LoginModel model) => 
     _httpService.post<LoginModel, AccountModel>('$controller/login', model, returnType: AccountModel());
 
-  Future<AccountModel> getById(String _id) => 
-    _httpService.get<LoginModel, AccountModel>('$controller/get-by-id/$_id', AccountModel());
+  Future<AccountModel> getById(String id) => 
+    _httpService.get<LoginModel, AccountModel>('$controller/get-by-id/$id', AccountModel());
     
   Future<AccountModel> getByEmail(String email) async {
     try {

@@ -8,7 +8,7 @@ import '../../data/api_repository.dart';
 import '../../models/authorize/signup.model.dart';
 
 class HistoryPurchaseScreen extends StatefulWidget {
-  const HistoryPurchaseScreen({Key? key}) : super(key: key);
+  const HistoryPurchaseScreen({super.key});
 
   @override
   _HistoryPurchaseScreenState createState() => _HistoryPurchaseScreenState();

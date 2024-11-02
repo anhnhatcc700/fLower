@@ -13,7 +13,7 @@ Future<void> sendEmail(String receiverEmail, String html, String subject) async 
 
   try {
     final sendReport = await send(message, smtpServer);
-    print('Message sent: ' + sendReport.toString());
+    print('Message sent: $sendReport');
   } on MailerException catch (e) {
     print('Message not sent.');
     for (var p in e.problems) {
